@@ -1,0 +1,5 @@
+{
+  "tasks": {
+    "start": "file_server ."
+  }
+}

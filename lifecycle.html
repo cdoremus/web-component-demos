@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Component Test</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="common-wc.js"></script>
+  <script src="lifecycle-wc.js"></script>
+
+</head>
+
+<body>
+  <my-header title="Web Component Lifecycle Examples" anchor></my-header>
+  <h3>AttributeChangedCallback</h3>
+  <div>
+    <attribute-changed-wc add="1"></attribute-changed-wc>
+    <div><button id="update-sum-button">Update Sum</button></div>
+  </div>
+  <script>
+    const button = document.querySelector("#update-sum-button");
+    button.addEventListener("click", (e) => {
+      // get reference to the web component
+      const component = document.querySelector("attribute-changed-wc");
+      const addValue = component.getAttribute("add");
+      console.log("addValue: ", addValue);
+      const newAdd = parseInt(addValue);
+      console.log("newAdd: ", newAdd)
+      component.setAttribute("add", parseInt(addValue));
+    });
+  </script>
+  <hr>
+
+</body>
+
+</html>

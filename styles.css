@@ -1,0 +1,19 @@
+/** Global Stylesheet */
+
+body {
+  background-color: bisque;
+}
+header {
+  background-color: darkturquoise ;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 1.5em;
+  border: 2px solid black;
+  border-radius: 25px;
+  a {
+    text-align: right;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}

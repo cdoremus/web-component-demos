@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Component Test</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- <script src="common-wc.js"></script> -->
+</head>
+
+<body>
+  <template shadowrootmode="open">
+    <style>
+      :host {
+        margin: 0;
+        padding: 1rem;
+        display: grid;
+        gap: 1rem;
+        grid-template:
+          "header" max-content
+          "content" auto
+          "footer" max-content / 100%;
+      }
+
+      slot * {
+        background-color: hsl(0 0% 90%);
+      }
+
+      ::slotted(*) {
+        background-color: hsl(160 50% 90%);
+      }
+
+      slot *,
+      ::slotted(*) {
+        padding: 1rem;
+      }
+    </style>
+    <slot name="header" style="grid-area: header;">
+      <header>Header is loading</header>
+    </slot>
+    <slot name="content" style="grid-area: content;">
+      <main>
+        <div>Content is loading</div>
+      </main>
+    </slot>
+    <slot name="footer" style="grid-area: footer;">
+      <footer>Footer is loading</footer>
+    </slot>
+  </template>
+
+  <header slot="header">
+    <h2>Declarative Shadow DOM Example</h2>
+  </header>
+  <main slot="content">
+    <h4>Page content goes here</h4>
+  </main>
+  <footer slot="footer" style="font-style: italic;">This is the footer</footer>
+</body>
+
+</html>

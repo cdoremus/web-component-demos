@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Component Test</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="common-wc.js"></script>
+  <script src="form-wc.js"></script>
+
+</head>
+
+<body>
+  <my-header title="Form Examples" anchor></my-header>
+  <h3>Using Elements Internals</h3>
+  <form id="name-form">
+    <label for="input-name" id="label-name">
+      Enter Name:
+    </label>
+    <div>
+      <my-name-input id="input-name"></my-name-input>
+    </div>
+    <div>
+      <input type="submit" value="Enter"></input>
+    </div>
+  </form>
+  <div id="output"></div>
+  <script>
+    const form = document.querySelector("#name-form");
+    form.addEventListener("submit", (e) => {
+      console.log("Form submitted: ", e);
+      // display the input value
+      const output = document.getElementById("output");
+      output.innerHTML = `Input value: ${e.target[0].value}`;
+      // do not refresh the page (the default form action)
+      e.preventDefault();
+    });
+  </script>
+  <hr>
+
+</body>
+
+</html>

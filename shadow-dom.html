@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Component Test</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="common-wc.js"></script>
+  <script src="shadow-dom.js"></script>
+</head>
+
+<body>
+  <my-header title="Shadow DOM Examples" anchor></my-header>
+  <h3>Open Shadow DOM</h3>
+  <my-shadow-dom></my-shadow-dom>
+  <hr>
+  <h3>Closed Shadow DOM</h3>
+  <my-closed-shadow-dom></my-closed-shadow-dom>
+  <hr>
+
+  <h3>Declarative Shadow DOM</h3>
+  <my-declarative-shadow-dom>
+    <template="open">
+      <button>
+        <slot></slot>
+      </button>
+    </template>
+    Click Me
+  </my-declarative-shadow-dom>
+</body>
+
+</html>

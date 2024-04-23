@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Pseudo-selectors Demo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pseudo-selectors.css">
+  <script src="common-wc.js"></script>
+</head>
+
+<body>
+  <my-header title="CSS Pseudo-selectors Demo" anchor></my-header>
+
+  <template id="tabbed-custom-element">
+    <style>
+      *,
+      ::before,
+      ::after {
+        box-sizing: border-box;
+        padding: 1rem;
+      }
+
+      :host {
+        display: flex;
+      }
+
+      .tab-container {
+        border: 2px solid black;
+      }
+    </style>
+    <div class="tab-container">
+      <div part="tab active">Tab 1
+      </div>
+      <slot name="tab1"></slot>
+    </div>
+    <div class="tab-container">
+      <div part="tab">Tab 2</div>
+      <slot name="tab2"></slot>
+    </div>
+    <div class="tab-container">
+      <div part="tab">Tab 3</div>
+      <slot name="tab3"></slot>
+    </div>
+  </template>
+
+  <tabbed-custom-element>
+    <div slot="tab1">
+      TAB 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+      dolore
+      magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+    <div slot="tab2">
+      TAB 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+      dolore
+      magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+    <div slot="tab3">
+      TAB 3: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+      dolore
+      magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+  </tabbed-custom-element>
+
+  <script src="pseudo-selectors.js"></script>
+</body>
+
+</html>
