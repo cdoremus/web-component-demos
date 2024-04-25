@@ -26,50 +26,42 @@
         display: flex;
       }
 
-      .tab-container {
-        border: 2px solid black;
+      .container {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        border: 3px solid red;
+        margin: 1rem 0;
+      }
+
+      .tab-group {
+        display: flex;
+        gap: 1rem;
+        border-bottom: 1px solid black;
+        padding: 0;
+      }
+
+      ::slotted(*) {
+        color: red;
       }
     </style>
-    <div class="tab-container">
-      <div part="tab active">Tab 1
+    <div class="container">
+      <div class="tab-group">
+        <div id="tab1" part="tab active" role="button">Tab 1</div>
+        <div id="tab2" part="tab" role="button">Tab 2</div>
+        <div id="tab3" part="tab" role="button">Tab 3</div>
       </div>
-      <slot name="tab1"></slot>
-    </div>
-    <div class="tab-container">
-      <div part="tab">Tab 2</div>
-      <slot name="tab2"></slot>
-    </div>
-    <div class="tab-container">
-      <div part="tab">Tab 3</div>
-      <slot name="tab3"></slot>
+      <div>
+        <slot id="slot-content" name="tab1"></slot>
+      </div>
     </div>
   </template>
 
   <tabbed-custom-element>
-    <div slot="tab1">
-      TAB 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-      dolore
-      magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </div>
-    <div slot="tab2">
-      TAB 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-      dolore
-      magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </div>
-    <div slot="tab3">
-      TAB 3: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-      dolore
-      magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </div>
+    <!--  Content for each tab  -->
+    <div slot="tab1">Slot 1 CONTENT</div>
+    <div slot="tab2">Slot 2 CONTENT</div>
+    <div slot="tab3">Slot 3 CONTENT</div>
   </tabbed-custom-element>
 
   <script src="pseudo-selectors.js"></script>

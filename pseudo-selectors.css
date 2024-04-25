@@ -8,6 +8,7 @@ tabbed-custom-element::part(tab):hover {
   background-color: #0c0d19;
   color: #ffffff;
   border-color: #0c0d33;
+  cursor: pointer;
 }
 
 tabbed-custom-element::part(tab):hover:active {
