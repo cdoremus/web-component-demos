@@ -16,7 +16,6 @@ import { JSDOM } from "npm:jsdom";
 const jsdom = new JSDOM(`<!doctype html>`);
 
 const global = jsdom.window;
-// WORKS!!!
 class MyWC extends global.HTMLElement {
   constructor() {
     super();
