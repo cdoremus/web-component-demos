@@ -1,0 +1,32 @@
+div.title {
+  margin:1rem auto;
+  font-size:2.5rem;
+  font-weight:900;
+}
+.container {
+    display:flex;
+    flex-direction:column;
+/*     border:2px solid red; */
+    width:90%;
+    margin:0 auto;
+  }
+  my-component::part(*) {
+    border-radius:30%;
+    background-color: gray;
+    color:white;
+    font-weight:900;
+  }
+  my-component::part(answer) {
+    background-color:darkseagreen;
+    color: red;
+    font-weight:900;
+    width: 5rem;
+    height:2rem;
+    text-align:center;
+    line-height:2rem;
+    border:2px solid black;
+    border-radius:25%;
+  }
+  my-component::part(default) {
+    font-style:italic;
+  }
