@@ -1,5 +1,5 @@
 {
   "tasks": {
-    "start": "file_server ."
+    "start": "deno run -A server.js"
   }
 }
