@@ -9,6 +9,8 @@ deno task start
 ```
 The application can then accessed at http://localhost:8000/
 
+There is also a task in `deno.json` called `cli` that runs the `deno serve` command that is available in Deno v1.34+.
+
 This code has been deployed on [Deno Deploy](https://deno.com/deploy) and can be accessed here: https://web-component-demo.deno.dev
 
 **NOTE:** The tests in the `test` folder do not work. A way to test web components outside of a Node runtime does not appear to exist at this time.
