@@ -6,7 +6,6 @@ div.title {
 .container {
     display:flex;
     flex-direction:column;
-/*     border:2px solid red; */
     width:90%;
     margin:0 auto;
   }

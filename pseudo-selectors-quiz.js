@@ -41,7 +41,7 @@ template.innerHTML = `
         <div part="answer" role="button">Maybe</div>
       </div>
     </div>`;
-class MyComponent extends HTMLElement {
+class QuizPage extends HTMLElement {
   connectedCallback() {
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
@@ -59,4 +59,4 @@ class MyComponent extends HTMLElement {
     });
   }
 }
-customElements.define("my-component", MyComponent);
+customElements.define("quiz-page", QuizPage);
