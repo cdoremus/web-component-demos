@@ -1,5 +1,6 @@
 {
   "tasks": {
-    "start": "deno run -A server.js"
+    "start": "deno run -A server.js",
+    "cli": "deno serve --allow-read=. server-cli.js"
   }
 }
