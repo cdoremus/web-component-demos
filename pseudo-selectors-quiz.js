@@ -49,12 +49,12 @@ class QuizPage extends HTMLElement {
     this.addClickListener(Array.from(buttons));
   }
 
-  /* */
+  /** Responds to Yes, No & Maybe button clicks */
   addClickListener(buttons) {
     console.log("buttons: ", buttons);
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
-        alert(button.innerText + " Clicked!");
+        alert(`${button.innerText} Clicked!`);
       });
     });
   }

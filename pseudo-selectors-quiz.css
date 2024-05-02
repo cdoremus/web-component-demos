@@ -9,13 +9,13 @@ div.title {
     width:90%;
     margin:0 auto;
   }
-  my-component::part(*) {
+  quiz-page::part(*) {
     border-radius:30%;
     background-color: gray;
     color:white;
     font-weight:900;
   }
-  my-component::part(answer) {
+  quiz-page::part(answer) {
     background-color:darkseagreen;
     color: red;
     font-weight:900;
@@ -25,7 +25,8 @@ div.title {
     line-height:2rem;
     border:2px solid black;
     border-radius:25%;
+    cursor:pointer;
   }
-  my-component::part(default) {
+  quiz-page::part(default) {
     font-style:italic;
   }
