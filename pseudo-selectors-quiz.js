@@ -36,9 +36,9 @@ template.innerHTML = `
       <slot name="topic"></slot>
       <slot name="question"></slot>
       <div class="button-group">
-        <div part="answer default" role="button">Yes</div>
-        <div part="answer" role="button">No</div>
-        <div part="answer" role="button">Maybe</div>
+        <div part="answer default" role="button" tabindex="1">Yes</div>
+        <div part="answer" role="button" tabindex="2">No</div>
+        <div part="answer" role="button" tabindex="3">Maybe</div>
       </div>
     </div>`;
 class QuizPage extends HTMLElement {
@@ -46,15 +46,21 @@ class QuizPage extends HTMLElement {
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     const buttons = this.shadowRoot.querySelectorAll("div[role='button']");
-    this.addClickListener(Array.from(buttons));
+    this.addListeners(Array.from(buttons));
   }
 
-  /** Responds to Yes, No & Maybe button clicks */
-  addClickListener(buttons) {
+  /** Responds to Yes, No & Maybe button clicks and
+   * Enter key events when button is in focus */
+  addListeners(buttons) {
     console.log("buttons: ", buttons);
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
-        alert(`${button.innerText} Clicked!`);
+        alert(`${button.innerText} button clicked!`);
+      });
+      button.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          alert(`${button.innerText} button Enter key event invoked!`);
+        }
       });
     });
   }
