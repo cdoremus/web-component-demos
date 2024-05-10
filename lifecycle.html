@@ -16,18 +16,20 @@
   <h3>AttributeChangedCallback</h3>
   <div>
     <attribute-changed-wc add="1"></attribute-changed-wc>
-    <div><button id="update-sum-button">Update Sum</button></div>
+    <div><button id="update-sum-button" style="padding: 1rem; font-weight:900; font-size:1.5rem;">Invoke
+        attributeChangedCallback</button></div>
   </div>
   <script>
+    const component = document.querySelector("attribute-changed-wc");
     const button = document.querySelector("#update-sum-button");
     button.addEventListener("click", (e) => {
       // get reference to the web component
-      const component = document.querySelector("attribute-changed-wc");
       const addValue = component.getAttribute("add");
-      console.log("addValue: ", addValue);
-      const newAdd = parseInt(addValue);
-      console.log("newAdd: ", newAdd)
-      component.setAttribute("add", parseInt(addValue));
+      // Increment attribute by to invoke attributeChangedCallback
+      const newAdd = parseInt(addValue) + 1;
+      // console.log("New add Value: ", newAdd);
+      component.setAttribute("add", newAdd.toString());
+      console.log("Component add attrib: ", component.getAttribute("add"));
     });
   </script>
   <hr>
