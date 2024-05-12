@@ -16,19 +16,30 @@ class PseudoSelectorWC extends HTMLElement {
 
     this.shadowRoot.addEventListener("click", (e) => {
       const tabName = e.target.id;
-      console.log("Tab name clicked", tabName);
-      // Change the slot name to the active tab, so
-      //  that the content will be switched
-      contentElement.name = tabName;
-      // Make clicked tab the active one
-      for (const tab of tabArray) {
-        if (tab.id === tabName) {
-          tab.part = "tab active";
-        } else {
-          tab.part = "tab";
-        }
+      this.clickHandler(tabName, contentElement, tabArray);
+    });
+    this.shadowRoot.addEventListener("keydown", (e) => {
+      console.log("Keydown event: ", e);
+      if (e.key === "Enter") {
+        const tabName = e.target.id;
+        this.clickHandler(tabName, contentElement, tabArray);
       }
     });
+  }
+
+  clickHandler(tabName, contentElement, tabArray) {
+    console.log("Tab name clicked", tabName);
+    // Change the slot name to the active tab, so
+    //  that the content will be switched
+    contentElement.name = tabName;
+    // Make clicked tab the active one
+    for (const tab of tabArray) {
+      if (tab.id === tabName) {
+        tab.part = "tab active";
+      } else {
+        tab.part = "tab";
+      }
+    }
   }
 }
 

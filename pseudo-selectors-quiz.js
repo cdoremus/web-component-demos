@@ -26,7 +26,7 @@ const css = `
     .button-group {
       display:flex;
       gap:2rem;
-      margin:1rem 0;ß
+      margin:1rem 0;
     }
   </style>`;
 const template = document.createElement("template");
