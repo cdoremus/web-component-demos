@@ -35,6 +35,7 @@
         <h3>Content is loading</h3>
       </div>
     </slot>
+    <slot name="footer"></slot>
   </template>
 
   <header slot="header">
@@ -45,6 +46,11 @@
   <main slot="content">
     <h3>Page content goes here</h3>
   </main>
+  <footer slot="footer">
+    <hr>
+    <a href="https://github.com/cdoremus/web-component-demos/blob/main/dsd-no-js.html">Source Code</a>
+  </footer>
+
 </body>
 
 </html>
