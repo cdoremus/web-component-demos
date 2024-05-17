@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Component Examples</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="common-wc.js"></script>
+  <script src="template.js"></script>
+
+</head>
+
+<body>
+  <my-header title="Web Component Template Examples" anchor="true"></my-header>
+  <h3 style="font-size:2rem;font-weight:900;margin-bottom:10px">Web Component with internal template</h3>
+  <template-wc>
+    <div>Default slot content</div>
+    <div slot="slot2">Slot 2 content</div>
+    <div slot="slot3">Slot 3 content</div>
+  </template-wc>
+  <hr />
+  <a href="https://github.com/cdoremus/web-component-demos/blob/main/styling.html">Source Code</a>
+</body>
+
+</html>
