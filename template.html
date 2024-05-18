@@ -20,7 +20,26 @@
     <div slot="slot3">Slot 3 content</div>
   </template-wc>
   <hr />
+  <h3 style="font-size:2rem;font-weight:900;margin-bottom:10px">Declarative Shadow DOM with Custom Element event
+    handling</h3>
+  <dsd-wc>
+    <template id="dsd-js" shadowrootmode="open">
+      <style>
+        div {
+          font-size: 1.0rem;
+          font-style: italic;
+        }
+      </style>
+      <span>Enter Something: </span>
+      <input />
+      <button>Enter</button>
+    </template>
+  </dsd-wc>
+
+
+  <hr />
   <a href="https://github.com/cdoremus/web-component-demos/blob/main/template.html">Source Code</a>
+  <script src="dsd-js.js"></script>
 </body>
 
 </html>

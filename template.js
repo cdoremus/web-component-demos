@@ -11,6 +11,7 @@ class TemplateWC extends HTMLElement {
         .container {
           width: 50%;
           border: 2px solid black;
+          padding: 0.25rem;
         }
         .title {
           font-size:1.75rem;
